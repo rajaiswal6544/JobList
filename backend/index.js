@@ -5,7 +5,6 @@ const cors = require("cors");
 const jobRoutes = require("./routes/jobs");
 
 const app = express();
-app.use(cors()); // Must be before the routes
 
 
 
