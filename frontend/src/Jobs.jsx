@@ -35,7 +35,7 @@ export default function Jobs() {
 
   const fetchJobs = async () => {
     try {
-      const { data } = await axios.get("http://localhost:5000/api/jobs", {
+      const { data } = await axios.get("https://job-list-backend-e5eg9u47o-rajaiswal6544s-projects.vercel.app/api/jobs", {
         params: filters,
       });
       setJobs(data);

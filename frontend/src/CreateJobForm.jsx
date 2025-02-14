@@ -23,7 +23,7 @@ export default function CreateJobForm() {
     console.log("Submitting job data:", formattedData);
   
     try {
-      await axios.post("http://localhost:5000/api/jobs", formattedData, {
+      await axios.post("https://job-list-backend-e5eg9u47o-rajaiswal6544s-projects.vercel.app/api/jobs", formattedData, {
         headers: { "Content-Type": "application/json" },
       });
       alert("Job posted successfully!");
