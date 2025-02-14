@@ -35,7 +35,7 @@ export default function Jobs() {
 
   const fetchJobs = async () => {
     try {
-      const response = await fetch("https://job-list-backend-e5eg9u47o-rajaiswal6544s-projects.vercel.app/api/jobs?"+
+      const response = await fetch("https://job-list-rx6j.vercel.app/api/jobs?"+
         new URLSearchParams(filters), {
         method: "GET",
         headers: {
