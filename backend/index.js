@@ -7,7 +7,7 @@ const jobRoutes = require("./routes/jobs");
 const app = express();
 app.use(express.json());
 app.use(cors({
-  origin: 'https://job-list-frontend-nine.vercel.app',
+  origin: '*',
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization'],
 }));
