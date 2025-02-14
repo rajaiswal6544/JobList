@@ -35,14 +35,27 @@ export default function Jobs() {
 
   const fetchJobs = async () => {
     try {
-      const { data } = await axios.get("https://job-list-backend-e5eg9u47o-rajaiswal6544s-projects.vercel.app/api/jobs", {
-        params: filters,
+      const response = await fetch("https://job-list-backend-e5eg9u47o-rajaiswal6544s-projects.vercel.app/api/jobs?"+
+        new URLSearchParams(filters), {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          // Uncomment below if authentication is required
+          // "Authorization": `Bearer YOUR_ACCESS_TOKEN`
+        },
       });
+  
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+  
+      const data = await response.json();
       setJobs(data);
     } catch (error) {
-      console.error("Error fetching jobs", error);
+      console.error("Error fetching jobs:", error.message);
     }
   };
+  
 
   const handleFilterChange = (e) => {
     setFilters({ ...filters, [e.target.name]: e.target.value });
