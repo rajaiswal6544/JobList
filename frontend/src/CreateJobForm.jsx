@@ -1,6 +1,6 @@
 import { useForm } from "react-hook-form";
 import axios from "axios";
-import { FiCalendar } from "react-icons/fi";
+
 import { useNavigate } from "react-router-dom";
 export default function CreateJobForm() {
   const { register, handleSubmit, reset } = useForm({
